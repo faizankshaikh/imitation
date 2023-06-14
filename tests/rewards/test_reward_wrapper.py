@@ -43,6 +43,6 @@ def test_reward_overwrite(rng):
     # check that wrapped reward is negative (all pendulum rewards is negative)
     # and other rewards are non-negative
     rand_act, _ = policy.predict(wrapped_env.reset())
-    _, rew, _, infos = wrapped_env.step(rand_act)
+    _, rew, _, _, infos = wrapped_env.step(rand_act)
     assert np.all(rew >= 0)
     assert np.all([info_dict["original_env_rew"] < 0 for info_dict in infos])

@@ -7,8 +7,7 @@ import tempfile
 from typing import Callable, Tuple
 from unittest import mock
 
-import gymnasium as gym
-import numpy as np
+import gymnasium as gymnasium as gymy as np
 import pytest
 import torch as th
 from stable_baselines3.common.vec_env import DummyVecEnv
@@ -627,7 +626,7 @@ def test_potential_net_2d_obs():
     env = Env2D()
     obs = env.reset()
     action = env.action_space.sample()
-    next_obs, _, done, _ = env.step(action)
+    next_obs, _, done, _, _ = env.step(action)
     obs_b = obs[None]
     action_b = np.array([action], dtype="int")
     next_obs_b = next_obs[None]
