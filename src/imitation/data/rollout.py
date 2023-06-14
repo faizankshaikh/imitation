@@ -423,7 +423,7 @@ def generate_trajectories(
     dones = np.zeros(venv.num_envs, dtype=bool)
     while np.any(active):
         acts, state = get_actions(obs, state, dones)
-        obs, rews, dones, _, infos = venv.step(acts)
+        obs, rews, dones, infos = venv.step(acts)
         assert isinstance(obs, np.ndarray)
 
         # If an environment is inactive, i.e. the episode completed for that
