@@ -22,7 +22,7 @@ from typing import (
     overload,
 )
 
-import gym
+import gymnasium as gym
 import numpy as np
 import torch as th
 from gym.wrappers import TimeLimit

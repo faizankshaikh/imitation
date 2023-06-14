@@ -3,7 +3,7 @@
 import abc
 from typing import Any, Callable, Dict, Iterable, Optional, Sequence, Tuple, Type, cast
 
-import gym
+import gymnasium as gym
 import numpy as np
 import torch as th
 from gym import spaces
