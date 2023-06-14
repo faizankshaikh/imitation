@@ -186,7 +186,7 @@ class ObsRewHalveWrapper(gym.Wrapper):
         return obs
 
     def step(self, action):
-        obs, rew, done, info = self.env.step(action)
+        obs, rew, done, _, info = self.env.step(action)
         return obs / 2, rew / 2, done, info
 
 

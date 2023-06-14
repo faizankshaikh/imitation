@@ -192,7 +192,7 @@ class RolloutInfoWrapper(gym.Wrapper):
         return new_obs
 
     def step(self, action):
-        obs, rew, done, info = self.env.step(action)
+        obs, rew, done, _, info = self.env.step(action)
         self._obs.append(obs)
         self._rews.append(rew)
 
